@@ -2,35 +2,32 @@ package Candidatos;
 
 public class Radio extends Candidatura {
     private int votosRadio;
-    private static  final int VOTOS_RADIO = 200000;
+    private static final int COSTO_RADIO = 200000;
 
-    public Radio( String nombre, int votosRadio){
+    public Radio(String nombre) {
         super(nombre);
         this.votosRadio = 0;
-
     }
-    public void votar(){
+
+    public void votar() {
         votosRadio++;
-        (System.out.print("Apoyados en Radio: "+ nombre);
-
+        System.out.println("Voto registrado por Radio para " + nombre);
     }
+
     @Override
-    public int getVotosRadio(){
+    public int getTotalVotos() {
         return votosRadio;
-
     }
+
     @Override
-    public int calcularCostos(){
+    public int calcularCosto() {
         return votosRadio * COSTO_RADIO;
-
     }
+
     @Override
-    public void vaciarUrnas(){
+    public void vaciarUrnas() {
         votosRadio = 0;
-        System.out.print("Votos eliminados en Radio: "+ nombre);
-
+        System.out.println("Votos de Radio eliminados para " + nombre);
     }
-
-
 }
 
